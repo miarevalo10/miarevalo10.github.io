@@ -1,0 +1,12 @@
+{
+    "title": "María Arévalo",
+    "description": "Página personal de María",
+    "author": "@miarevalo10",
+    "hello": "Hola, soy María",
+    "roles": "[\"Desarrolladora\", \"Amiga\", \"Curiosa\"]",
+    "notfound": {
+      "header": "NOT FOUND",
+      "description": "Llegaste a una pagina cuya ruta no existe..."
+    }
+  }
+  

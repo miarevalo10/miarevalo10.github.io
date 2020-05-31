@@ -1,0 +1,12 @@
+{
+  "title": "María Arévalo",
+  "description": "María's personal page",
+  "author": "@miarevalo10",
+  "hello": "Hi I'm María",
+  "roles": "[\"Developer\", \"Friend\", \"Curious\"]",
+
+  "notfound": {
+    "header": "NOT FOUND",
+    "description": "You just hit a route that doesn't exist... the sadness."
+  }
+}
