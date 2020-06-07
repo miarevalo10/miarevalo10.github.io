@@ -27,12 +27,12 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'maria-arevalo',
-        short_name: 'portflio',
+        short_name: 'portfolio',
         start_url: '/',
         background_color: '#FFFFFF',
         theme_color: '#0091EA',
         display: 'minimal-ui',
-        icon: 'src/images/ProfilePic.jpg', // This path is relative to the root of the site.
+        icon: 'static/profilePic.jpg', // This path is relative to the root of the site.
       },
     },
     {

@@ -8,5 +8,15 @@
   "notfound": {
     "header": "NOT FOUND",
     "description": "You just hit a route that doesn't exist... the sadness."
-  }
+  },
+
+  "work-polyglot": {
+      "name":"Polyglot SAS",
+      "description":"",
+      "url":"",
+      "repositoryUrl":"",
+      "type":"",
+      "publishedDate":"",
+      "logo":""
+    }
 }

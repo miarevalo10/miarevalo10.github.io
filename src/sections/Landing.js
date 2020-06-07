@@ -1,9 +1,12 @@
 import React, { Fragment } from "react";
 import Triangle from "../components/Triangle";
 import Section from "../components/Section";
-import { Heading, Text } from "rebass/styled-components";
+import { Heading, Text, Flex, Box } from "rebass/styled-components";
 import { FormattedMessage, useIntl } from "gatsby-plugin-intl";
 import TextLoop from "react-text-loop";
+import SocialLink from "../components/SocialLink";
+import { SectionLink } from "react-scroll-section";
+import MouseIcon from '../components/MouseIcon';
 
 const Background = () => (
   <div>
@@ -37,10 +40,31 @@ const Background = () => (
 );
 
 const centerHorizontally = { marginRight: "auto", marginLeft: "auto" };
+const socialLinks = [
+  {
+    fontAwesomeIcon: "github",
+    id: "1",
+    name: "Github",
+    url: "https://github.com/miarevalo10",
+  },
+  {
+    fontAwesomeIcon: "linkedin",
+    id: "2",
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/maria-arevalo-01/",
+  },
+  {
+    fontAwesomeIcon: "twitter",
+    id: "3",
+    name: "Twitter",
+    url: "https://twitter.com/miarevalo10",
+  }
+];
 
 const LandingPage = () => {
   const intl = useIntl();
   const rolesIntl = JSON.parse(intl.formatMessage({ id: "roles" }));
+
   return (
     <Section.Container id="home" Background={Background}>
       <Fragment>
@@ -71,6 +95,16 @@ const LandingPage = () => {
               ))}
           </TextLoop>
         </Heading>
+        <Flex alignItems="center" justifyContent="center" flexWrap="wrap">
+          {socialLinks.map(({ id, ...rest }) => (
+            <Box mx={3} fontSize={[5, 6, 6]} key={id}>
+              <SocialLink {...rest} />
+            </Box>
+          ))}
+        </Flex>
+        <SectionLink section="about">
+          {({ onClick }) => <MouseIcon onClick={onClick} />}
+        </SectionLink>
       </Fragment>
     </Section.Container>
   );
