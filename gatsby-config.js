@@ -3,6 +3,10 @@ module.exports = {
     title: "María Arévalo",
     description: `María's personal site.`,
     author: "@miarevalo10",
+    languages: {
+      langs: ["en", "es"],
+      defaultLangKey: "en",
+    },
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -41,6 +45,9 @@ module.exports = {
         path: `${__dirname}/src/intl`,
         languages: [`en`, `es`],
         defaultLanguage: `en`,
+        langKeyDefault: "en",
+        useLangKeyLayout: true,
+        prefixDefault: true,
       },
     },
     "gatsby-plugin-styled-components",
