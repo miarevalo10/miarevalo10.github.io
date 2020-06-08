@@ -102,7 +102,7 @@ const LandingPage = () => {
             </Box>
           ))}
         </Flex>
-        <SectionLink section="About me">
+        <SectionLink section={intl.formatMessage({ id: "about-me-title" })}>
           {({ onClick }) => <MouseIcon onClick={onClick} />}
         </SectionLink>
       </Fragment>
