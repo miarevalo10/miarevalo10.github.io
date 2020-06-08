@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { Text, Box, Link, Flex } from "rebass/styled-components";
 import Fade from "react-reveal/Fade";
 import SocialLink from "./SocialLink";
+import { FormattedMessage } from "gatsby-plugin-intl";
+
 const FooterContainer = styled.div`
   max-width: 1366px;
   display: flex;
@@ -11,7 +13,7 @@ const FooterContainer = styled.div`
   align-items: center;
   margin: auto;
 
-  @media (max-width: 400px) {
+  @media (max-width: 700px) {
     flex-direction: column-reverse;
 
     & > * {
@@ -58,17 +60,17 @@ const Footer = () => (
     <FooterContainer>
       <Fade left>
         <TextFooter fontSize={[2, 3]}>
-          <span>{`María's Portfolio - Powered by `}</span>
+          <FormattedMessage id="description" />
+          <span> - Powered by </span>
           <Link href="https://www.gatsbyjs.org/">Gatsby</Link>
-          <span role="img" aria-label="heart">
-            ❤️
-          </span>
         </TextFooter>
       </Fade>
       <Flex>
         <Fade center>
           <TextFooter fontSize={[2, 3]}>
-            <span>{`Contact me at: `}</span>
+            <span>
+              <FormattedMessage id="contact-me" />
+            </span>
             <Link target="_blank" href="mailto: marisarevalo97@gmail.com">
               marisarevalo97@gmail.com
             </Link>
