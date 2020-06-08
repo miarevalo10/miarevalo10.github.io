@@ -6,7 +6,7 @@ import { FormattedMessage, useIntl } from "gatsby-plugin-intl";
 import TextLoop from "react-text-loop";
 import SocialLink from "../components/SocialLink";
 import { SectionLink } from "react-scroll-section";
-import MouseIcon from '../components/MouseIcon';
+import MouseIcon from "../components/MouseIcon";
 
 const Background = () => (
   <div>
@@ -58,7 +58,7 @@ const socialLinks = [
     id: "3",
     name: "Twitter",
     url: "https://twitter.com/miarevalo10",
-  }
+  },
 ];
 
 const LandingPage = () => {
@@ -102,7 +102,7 @@ const LandingPage = () => {
             </Box>
           ))}
         </Flex>
-        <SectionLink section="about">
+        <SectionLink section="About me">
           {({ onClick }) => <MouseIcon onClick={onClick} />}
         </SectionLink>
       </Fragment>

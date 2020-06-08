@@ -50,7 +50,7 @@ const About = () => (
       label="person"
     />
     <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
-      <Box width={[1, 1, 4 / 6]} px={[1, 2, 4]} lineHeight={2}>
+      <Box width={[1, 1, 4 / 6]} px={[1, 2, 4]} lineHeight={2} fontSize={18}>
         <Fade bottom>
           <FormattedMessage id="about-me-description" />
         </Fade>
