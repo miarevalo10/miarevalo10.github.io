@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { Image, Text, Flex, Box } from "rebass/styled-components";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
+import {useIntl } from "gatsby-plugin-intl";
+
 import Section from "../components/Section";
 import Triangle from "../components/Triangle";
 import SocialLink from "../components/SocialLink";
@@ -203,7 +205,7 @@ const experience = [
   },
   { 
     id:"3",
-    name:"Placeholde",
+    name:"Placeholder",
     description:"Placeholder text",
     url:"",
     repositoryUrl:"",
@@ -219,8 +221,8 @@ const experience = [
 
 const Experience = () => {
   return (
-    <Section.Container id="experience" Background={Background}>
-      <Section.Header name="Experience" icon="💻" label="notebook" />
+    <Section.Container id={useIntl().formatMessage({ id: "experience-title" })}Background={Background}>
+      <Section.Header name={useIntl().formatMessage({ id: "experience-title" })} icon="💻" label="notebook" />
       <CardContainer minWidth="350px">
           {experience.map((exp, i) => (
             <Fade bottom delay={i * 200} key={exp.id}>

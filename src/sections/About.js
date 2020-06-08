@@ -1,9 +1,10 @@
 import React from "react";
 import Triangle from "../components/Triangle";
 import styled from "styled-components";
-import Section from '../components/Section';
-import { Box, Image, Flex } from 'rebass/styled-components';
-import Fade from 'react-reveal/Fade';
+import Section from "../components/Section";
+import { Box, Image, Flex } from "rebass/styled-components";
+import Fade from "react-reveal/Fade";
+import { FormattedMessage, useIntl } from "gatsby-plugin-intl";
 
 const Background = () => (
   <div>
@@ -39,30 +40,34 @@ const ProfilePicture = styled(Image)`
 `;
 
 const About = () => (
-    <Section.Container id="about" Background={Background}>
-        <Section.Header name="About me" icon="👩🏻" label="person" />
-        <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
-            <Box width={[1, 1, 4 / 6]} px={[1, 2, 4]}>
-              <Fade bottom>
-                Texto
-              </Fade>
-            </Box>
+  <Section.Container
+    id={useIntl().formatMessage({ id: "about-me-title" })}
+    Background={Background}
+  >
+    <Section.Header
+      name={useIntl().formatMessage({ id: "about-me-title" })}
+      icon="👩🏻"
+      label="person"
+    />
+    <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
+      <Box width={[1, 1, 4 / 6]} px={[1, 2, 4]} lineHeight={2}>
+        <Fade bottom>
+          <FormattedMessage id="about-me-description" />
+        </Fade>
+      </Box>
 
-            <Box
-              width={[1, 1, 2 / 6]}
-              style={{ maxWidth: '300px', margin: 'auto' }}
-            >
-              <Fade right>
-                <ProfilePicture
-                  src="profilePic.jpg"
-                  alt="Profile picture"
-                  mt={[4, 4, 0]}
-                  ml={[0, 0, 1]}
-                />
-              </Fade>
-            </Box>
-          </Flex>
-    </Section.Container>
+      <Box width={[1, 1, 2 / 6]} style={{ maxWidth: "300px", margin: "auto" }}>
+        <Fade right>
+          <ProfilePicture
+            src="profilePic.jpg"
+            alt="Profile picture"
+            mt={[4, 4, 0]}
+            ml={[0, 0, 1]}
+          />
+        </Fade>
+      </Box>
+    </Flex>
+  </Section.Container>
 );
 
 export default About;

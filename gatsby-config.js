@@ -32,7 +32,7 @@ module.exports = {
         background_color: '#FFFFFF',
         theme_color: '#0091EA',
         display: 'minimal-ui',
-        icon: 'static/profilePic.jpg', // This path is relative to the root of the site.
+        icon: 'static/en/profilePic.jpg', // This path is relative to the root of the site.
       },
     },
     {

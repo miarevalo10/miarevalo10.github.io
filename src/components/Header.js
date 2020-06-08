@@ -5,7 +5,8 @@ import Fade from "react-reveal/Fade";
 import { Flex, Image } from "rebass/styled-components";
 import { SectionLinks } from "react-scroll-section";
 import RouteLink from "./RouteLink";
-import Logo from "../../static/profilePic.jpg";
+import Logo from "../../static/en/profilePic.jpg";
+import Language from "./Language";
 
 const capitalize = (s) => s && s[0].toUpperCase() + s.slice(1);
 
@@ -44,7 +45,7 @@ const Header = () => (
         alignItems="center"
         p={3}
       >
-         <SectionLinks>
+        <SectionLinks>
           {({ allLinks }) => {
             const { home, links } = formatLinks(allLinks);
 
@@ -55,7 +56,7 @@ const Header = () => (
                 alt="Portfolio Logo"
                 onClick={home.onClick}
                 style={{
-                  cursor: 'pointer',
+                  cursor: "pointer",
                 }}
               />
             );
@@ -71,11 +72,14 @@ const Header = () => (
             return (
               <Fragment>
                 {homeLink}
-                <Flex mr={[0, 3, 5]}>{navLinks}</Flex>
+                <Flex mr={[0, 3, 5]}>
+                  {navLinks}
+                  <Language />
+                </Flex>
               </Fragment>
             );
           }}
-        </SectionLinks>         
+        </SectionLinks>
       </Flex>
     </Fade>
   </HeaderContainer>
