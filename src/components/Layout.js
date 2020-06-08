@@ -8,8 +8,9 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
-import { ScrollingProvider } from 'react-scroll-section';
-import {useIntl } from "gatsby-plugin-intl"
+import { ScrollingProvider } from "react-scroll-section";
+import { useIntl } from "gatsby-plugin-intl";
+import { navigate } from "gatsby";
 
 import config from "react-reveal/globals";
 import colors from "../../colors";
@@ -56,12 +57,32 @@ const theme = {
   },
 };
 
+const getRedirectLanguage = () => {
+  if (typeof navigator === `undefined`) {
+    return "en";
+  }
+
+  const lang =
+    navigator && navigator.language && navigator.language.split("-")[0];
+  if (!lang) return "es";
+
+  switch (lang) {
+    case "es":
+      return "es";
+    default:
+      return "en";
+  }
+};
+
 const Layout = ({ children }) => {
   // TODO: research what this does
   useEffect(() => {
     loadScript("https://use.fontawesome.com/fd58d214b9.js");
+    const urlLang = getRedirectLanguage();
+    navigate(`/${urlLang}`);
   }, []);
-  const intl = useIntl()
+
+  const intl = useIntl();
 
   return (
     <main>

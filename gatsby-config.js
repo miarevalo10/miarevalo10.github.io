@@ -1,38 +1,38 @@
 module.exports = {
   siteMetadata: {
-    title: 'María Arévalo',
+    title: "María Arévalo",
     description: `María's personal site.`,
-    author: '@miarevalo10',
+    author: "@miarevalo10",
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
+    "gatsby-plugin-react-helmet",
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ['Cabin', 'Open Sans'],
+          families: ["Cabin", "Open Sans"],
         },
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'images',
-        path:  `${__dirname}/src/`,
+        name: "images",
+        path: `${__dirname}/src/`,
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: "gatsby-plugin-manifest",
       options: {
-        name: 'maria-arevalo',
-        short_name: 'portfolio',
-        start_url: '/',
-        background_color: '#FFFFFF',
-        theme_color: '#0091EA',
-        display: 'minimal-ui',
-        icon: 'static/en/profilePic.jpg', // This path is relative to the root of the site.
+        name: "maria-arevalo",
+        short_name: "portfolio",
+        start_url: "/",
+        background_color: "#FFFFFF",
+        theme_color: "#0091EA",
+        display: "minimal-ui",
+        icon: "static/en/profilePic.jpg", // This path is relative to the root of the site.
       },
     },
     {
@@ -43,11 +43,11 @@ module.exports = {
         defaultLanguage: `en`,
       },
     },
-    'gatsby-plugin-styled-components',
-    'gatsby-transformer-remark',
+    "gatsby-plugin-styled-components",
+    "gatsby-transformer-remark",
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',
   ],
-}
+};

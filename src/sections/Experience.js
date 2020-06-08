@@ -164,7 +164,7 @@ const experience = [
     publishedDate: "2019",
     logo: {
       src: "logoMuevelo.png",
-      title: "Polyglot",
+      title: "Muevelo",
     },
   },
   {
@@ -178,7 +178,7 @@ const experience = [
     publishedDate: "2019",
     logo: {
       src: "logoMuevelo.png",
-      title: "Polyglot",
+      title: "Muevelo",
     },
   },
   {
@@ -192,7 +192,7 @@ const experience = [
     publishedDate: "2017",
     logo: {
       src: "logoAcsendo.jpg",
-      title: "Polyglot",
+      title: "Acsendo",
     },
   },
 ];
