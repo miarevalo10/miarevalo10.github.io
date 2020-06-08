@@ -44,7 +44,7 @@ const Background = () => (
   </div>
 );
 
-const CARD_HEIGHT = "260px";
+const CARD_HEIGHT = "270px";
 
 const MEDIA_QUERY_SMALL = "@media (max-width: 400px)";
 
@@ -138,7 +138,7 @@ Project.propTypes = {
   }).isRequired,
 };
 
-const experience = [
+const experienceEn = [
   {
     id: "1",
     name: "Polyglot SAS",
@@ -171,7 +171,7 @@ const experience = [
     id: "3",
     name: "Múevelo App",
     description:
-      "Developed an android application to track location of participants of a study for the Faculty of Medicine.",
+      "Developed an android application to track location of participants from the TrUST study for the Faculty of Medicine. The app was build with Kotlin and was connected to Firebase to store its data in a NoSQL database. It had an special focus on compatibility in a wide range of devices as well as battery optimization.",
     url: "https://www.frontiersin.org/articles/10.3389/fpubh.2020.00064/full",
     urlName: "See study",
     type: "Mobile",
@@ -185,7 +185,7 @@ const experience = [
     id: "4",
     name: "Acsendo",
     description:
-      "As an IT Intern I was in charge of doing follow-up reports on the team developments and times. Management of SCRUM methodology and technologies such as Angular2 and java.",
+      "As an IT intern, I was in charge of tracking reports on team development and timing. I was also in charge of keeping an eye on task distribution and bug fixes. In addition, I made tests and small adjustments to a product under development built with Angular 2 and Java. All this using the SCRUM methodology.",
     url: "https://www.acsendo.com/",
     urlName: "See website",
     type: "Web",
@@ -197,7 +197,69 @@ const experience = [
   },
 ];
 
+const experienceEs = [
+  {
+    id: "1",
+    name: "Polyglot SAS",
+    description:
+      "Como desarrolladora  Full stack, ayudé a construir plataformas web personalizadas usando frameworks web como Angular 4+, Nest.js, Django, Ionic y Flutter. También utilizamos el framework SCRUM para desarrollar dichos productos.",
+    url: "https://polyglot.site/",
+    urlName: "Ver sitio",
+    type: "WEB & Móvil",
+    publishedDate: "2018-2020",
+    logo: {
+      src: "logoPolyglot.svg",
+      title: "Polyglot",
+    },
+  },
+  {
+    id: "2",
+    name: "Muevelo dashboard",
+    description:
+      'Los datos que se recopilaron con la aplicación  "Muévelo" se almacenaron en una base de datos NoSQL. Implementé un ETL para procesar los datos, de acuerdo con los requisitos, y cargarlos en una base de datos PostgreSQL. Finalmente, desarrollé una aplicación web creada con Flash y Dash para visualizar e interactuar con los datos.',
+    url: "https://www.frontiersin.org/articles/10.3389/fpubh.2020.00064/full",
+    urlName: "Ver estudio",
+    type: "WEB & análisis de datos",
+    publishedDate: "2019",
+    logo: {
+      src: "logoMuevelo.png",
+      title: "Muevelo",
+    },
+  },
+  {
+    id: "3",
+    name: "Múevelo App",
+    description:
+      "Desarrollé una aplicación Android para rastrear la ubicación de los participantes del estudio TrUST para la Facultad de Medicina. La aplicación se creó con Kotlin y se conectó a Firebase para almacenar sus datos en una base de datos NoSQL. Tenía un enfoque especial en la compatibilidad en una amplia gama de dispositivos, así como en la optimización de la batería.",
+    url: "https://www.frontiersin.org/articles/10.3389/fpubh.2020.00064/full",
+    urlName: "Ver estudio",
+    type: "Mobile",
+    publishedDate: "2019",
+    logo: {
+      src: "logoMuevelo.png",
+      title: "Muevelo",
+    },
+  },
+  {
+    id: "4",
+    name: "Acsendo",
+    description:
+      "Como pasante de TI, estaba a cargo de hacer informes de seguimiento sobre el desarrollo y los tiempos del equipo. Junto a esto, también me encargaba de estar pendiente de distribución de tareas y solución de bugs. Además, hacía pruebas y ajustes pequeños a un producto en desarrollo construido con Angular 2. Todo esto usando la metodología SCRUM",
+    url: "https://www.acsendo.com/",
+    urlName: "Ver sitio",
+    type: "Web",
+    publishedDate: "2017",
+    logo: {
+      src: "logoAcsendo.jpg",
+      title: "Acsendo",
+    },
+  },
+];
+
 const Experience = () => {
+  const intl = useIntl();
+  console.log(intl.locale);
+  const experience = intl.locale === "en" ? experienceEn : experienceEs;
   return (
     <Section.Container
       id={useIntl().formatMessage({ id: "experience-title" })}
